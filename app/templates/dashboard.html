@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/combo.css') }}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/combo.js') }}"></script>
+</head>
+<body>
+  <section class="color-3">
+    <h1 style="padding-left: 200px">Hi, {{ name }}</h1>
+  <p>
+    <button class="btn btn-3 btn-3a icon-cart" style="display: inline;" id="qr">Afficher le QR Code</button>
+    <button class="btn btn-3 btn-3b icon-star-2" style="display: inline;" id="services">Demande de services</button>
+
+  </p>
+
+  <p>
+    <button class="btn btn-3 btn-3c icon-heart-2" style="display: none;" id="acte">Acte de naissance</button>  <!-- style="display: none;" -->
+    <button class="btn btn-3 btn-3c icon-heart-2" style="display: none;" id="casier">Casier judiciaire</button>
+    <button class="btn btn-3 btn-3c icon-heart-2" style="display: none;" id="access">Accès diplôme</button>
+    <!-- <img src="{{ url_for('static', filename='img/qr.png') }}" id="img_qr" style="display: none;" style="width: 25%"> -->
+  </p>
+<!--   <p>
+    <button class="btn btn-3 btn-3d icon-cog">Settings</button>
+    <button class="btn btn-3 btn-3e icon-arrow-right">Send data</button>
+  </p> -->
+
+</section>
+<div class="container">
+  <h4 class="page-header">Home</h4>
+  <br />
+</div>
+<script type="text/javascript">
+  document.getElementById("services").onclick = function() { 
+ 
+   document.getElementById("acte").style.display = "inline";
+   document.getElementById("casier").style.display = "inline";
+   document.getElementById("access").style.display = "inline";
+
+   document.getElementById("qr").innerHTML = "Retour";
+   }
+
+   document.getElementById("qr").onclick = function() {
+    if (document.getElementById("qr").innerHTML =="Retour"){
+       document.getElementById("acte").style.display = "none";
+       document.getElementById("casier").style.display = "none";
+       document.getElementById("access").style.display = "none";
+
+       document.getElementById("qr").innerHTML = "Afficher le QR Code";
+    }else{
+      window.open("qr");
+    }
+   }
+
+   document.getElementById("casier").onclick = function() {
+    window.open("{{ url_for('static', filename='pdf/casier.pdf') }}")
+   }
+</script>
+</body>
+</html>

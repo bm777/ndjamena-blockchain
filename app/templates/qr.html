@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="combo.css">
+  <script type="text/javascript" src="combo.js"></script>
+</head>
+<body>
+  <section class="color-3">
+    <h1>Hi, {{ name }}</h1>
+  <p>
+    <!-- <button class="btn btn-3 btn-3a icon-cart" onclick="url_for('/')">Afficher le QR Code</button> -->
+    <button class="btn btn-3 btn-3b icon-star-2">Demande de services</button>
+
+  </p>
+
+  <p>
+    <!-- <button class="btn btn-3 btn-3c icon-heart-2" >Acte de naissance</button> -->  <!-- style="display: none;" -->
+    <!-- <button class="btn btn-3 btn-3c icon-heart-2">Casier judiciaire</button> -->
+    <!-- <button class="btn btn-3 btn-3c icon-heart-2">Accès diplôme</button> -->
+    <img src="{{ url_for('static', filename='img/qr.png') }}" style="width: 25%">
+  </p>
+  <button class="btn btn-3 btn-3c icon-heart-2" onclick="self.close()">Quitter</button>
+<!--   <p>
+    <button class="btn btn-3 btn-3d icon-cog">Settings</button>
+    <button class="btn btn-3 btn-3e icon-arrow-right">Send data</button>
+  </p> -->
+
+</section>
+<div class="container">
+  <h4 class="page-header">Home</h4>
+  <br />
+</div>
+</body>
+</html>
